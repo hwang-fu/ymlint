@@ -2,6 +2,8 @@
 
 A minimal YAML validator written in pure Haskell.
 
+![gif](./resources/ymlint.gif)
+
 ## Features
 
 - Validates a subset of YAML syntax
