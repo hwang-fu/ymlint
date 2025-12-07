@@ -44,5 +44,4 @@ ymlint <filepath>
 ## License
 
 BSD-3-Clause
-```
 
