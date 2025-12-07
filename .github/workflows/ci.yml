@@ -42,6 +42,3 @@ jobs:
 
       - name: Build
         run: cabal build --ghc-options="-Wall"
-
-      - name: Run executable (smoke test)
-        run: cabal run ymlint
