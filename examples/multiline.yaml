@@ -1,0 +1,7 @@
+name: test
+description: |
+  This is a multi-line
+  block of text
+items:
+  - first
+  - second

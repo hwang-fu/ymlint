@@ -10,6 +10,7 @@ data Token
   | Dictionary Int String String     -- ^ Key-value pair (indent, key, value)
   | ListItem Int String              -- ^ List item (indent content)
   | MultiLine Int Char               -- ^ Multi-line marker (indent, | or >)
+  | TextContent Int String           -- ^ Indented text content (indent, text)
   | Invalid String                   -- ^ Unrecognized line
   deriving (Show, Eq)
 
@@ -23,6 +24,7 @@ tokenizeLine line
     | isListItem stripped   = ListItem indent (extractListContent stripped)
     | isMultiLine stripped  = MultiLine indent (extractMultiLineChar stripped)
     | isDictionary stripped = parseDictionary indent stripped
+    | indent > 0            = TextContent indent stripped
     | otherwise             = Invalid line
   where
     indent    = countIndent line
